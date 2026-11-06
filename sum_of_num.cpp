@@ -20,7 +20,10 @@ int main() {
         user_num = std::stoi(usernum_str);
         sum = 0;
         counter = 0;
-
+        if (user_num <= 0) {
+            std::cout << "the number has to be more than zero"
+                         "Please, enter a new one";
+        } else {
         while (counter < user_num) {
             sum = sum + counter;
             counter = counter + 1;
@@ -32,7 +35,8 @@ int main() {
         std::cout << "\nThe sum of numbers from 0 to "
         << counter << " is " << sum;
         // If the number is not an integer, tell the user to enter a valid one
-     } catch (std::invalid_argument) {
+     }
+} catch (std::invalid_argument) {
          std::cout << usernum_str << " is not a valid number."
          " Please, enter a new one.\n";
         // Whatever the outcome, thank to user for using the code
